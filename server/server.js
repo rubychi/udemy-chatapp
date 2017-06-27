@@ -10,7 +10,7 @@ const http = require('http');
 // const { mongoose } = require('./db/mongoose');
 // const { User } = require('./models/user');
 // const { authenticate } = require('./middleware/authenticate');
-const { generateMessage } = require('./utils/message');
+const { generateMessage, generateLocationMessage } = require('./utils/message');
 
 const path = require('path');
 const publicPath = path.join(__dirname, '../public');
@@ -37,6 +37,10 @@ io.on('connection', (socket) => {
     // });
     socket.broadcast.emit('newMessage', generateMessage(message.from, message.text));
     callback('Got it! This is from the server.');
+  });
+
+  socket.on('createLocationMessage', (coords) => {
+    io.emit('newLocationMessage', generateLocationMessage('Admin', coords.latitude, coords.longitude));
   });
 
   socket.on('disconnect', () => {
