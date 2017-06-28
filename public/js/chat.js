@@ -17,7 +17,7 @@ function scrollToBottom() {
 }
 
 socket.on('connect', function () {
-  console.log('Connected to server');
+  // console.log('Connected to server');
 });
 
 socket.on('newMessage', function (message) {
