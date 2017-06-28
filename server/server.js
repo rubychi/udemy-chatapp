@@ -44,7 +44,7 @@ io.on('connection', (socket) => {
     }
     socket.join(params.room);
     // Remove the user from previous room (if have one)
-    users.removeUser(socket.io);
+    users.removeUser(socket.id);
     users.addUser(socket.id, params.name, params.room);
     io.to(params.room).emit('updateUserList', users.getUserList(params.room));
     socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat app!'));
@@ -52,17 +52,22 @@ io.on('connection', (socket) => {
     callback();
   });
   socket.on('createMessage', (message, callback) => {
-    console.log('Message sent from client:', message);
-    io.emit('newMessage', {
-      from: message.from,
-      text: message.text,
-      createdAt: new Date().getTime(),
-    });
+    const user = users.getUser(socket.id);
+    if (user && isRealString(message.text)) {
+      io.to(user.room).emit('newMessage', {
+        from: user.name,
+        text: message.text,
+        createdAt: new Date().getTime(),
+      });
+    }
     callback();
   });
 
   socket.on('createLocationMessage', (coords) => {
-    io.emit('newLocationMessage', generateLocationMessage('Admin', coords.latitude, coords.longitude));
+    const user = users.getUser(socket.id);
+    if (user) {
+      io.to(user.room).emit('newLocationMessage', generateLocationMessage(user.name, coords.latitude, coords.longitude));
+    }
   });
 
   socket.on('disconnect', () => {

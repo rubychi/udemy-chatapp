@@ -24,7 +24,7 @@ socket.on('connect', function () {
       alert(error);
       window.location.href = '/';
     } else {
-      console.log('No error');
+      // console.log('No error');
     }
   });
 });
@@ -68,11 +68,9 @@ socket.on('disconnect', function () {
 
 jQuery('#message-form').on('submit', function (e) {
   e.preventDefault();
-  var params = jQuery.deparam(window.location.search);
   var messageTextbox = jQuery('[name=message]');
 
   socket.emit('createMessage', {
-    from: params.name,
     text: messageTextbox.val(),
   }, function () {
     messageTextbox.val('');
