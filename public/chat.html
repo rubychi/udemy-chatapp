@@ -30,11 +30,15 @@
   <script id="message-template" type="text/template">
     <li class="message">
       <div class="message__title">
-        <h4>{{from}}</h4>
+        <font color={{color}}>
+          <h4>{{from}}</h4>
+        </font>
         <span>{{createdAt}}</span>
       </div>
       <div class="message__body">
-        <p>{{text}}</p>
+        <p>
+          <font color={{color2}}>{{text}}</font>
+        </p>
       </div>
     </li>
   </script>
@@ -42,7 +46,8 @@
   <script id="location-message-template" type="text/template">
     <li class="message">
       <div class="message__title">
-        <h4>{{from}}</h4>
+        <font color={{color}}>
+          <h4>{{from}}</h4></font>
         <span>{{createdAt}}</span>
       </div>
       <div class="message__body">

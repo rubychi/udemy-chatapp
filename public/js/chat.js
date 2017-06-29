@@ -30,9 +30,23 @@ socket.on('connect', function () {
 });
 
 socket.on('newMessage', function (message) {
+  var params = jQuery.deparam(window.location.search);
+  var color, color2;
+  if (message.from === 'Admin') {
+    color = 'SteelBlue';
+    color2 = 'SteelBlue';
+  } else if (message.from === params.name) {
+    color = 'Crimson';
+    color2 = 'SlateGray';
+  } else {
+    color = 'SlateGray';
+    color2 = 'SlateGray';
+  }
   var formattedTime = moment(message.createdAt).format('h:mm a');
   var template = jQuery('#message-template').html();
   var html = Mustache.render(template, {
+    color: color,
+    color2: color2,
     text: message.text,
     from: message.from,
     createdAt: formattedTime,
@@ -42,9 +56,12 @@ socket.on('newMessage', function (message) {
 });
 
 socket.on('newLocationMessage', function (message) {
+  var params = jQuery.deparam(window.location.search);
+  var color = message.from === params.name ? 'Crimson' : 'SlateGray';
   var formattedTime = moment(message.createdAt).format('h:mm a');
   var template = jQuery('#location-message-template').html();
   var html = Mustache.render(template, {
+    color: color,
     url: message.url,
     from: message.from,
     createdAt: formattedTime,
@@ -54,10 +71,12 @@ socket.on('newLocationMessage', function (message) {
 });
 
 socket.on('updateUserList', function (users) {
-  let ol = jQuery('<ol></ol>');
+  var params = jQuery.deparam(window.location.search);
+  let ol = jQuery('<ul></ul>');
 
   users.forEach(function (user) {
-    ol.append(jQuery('<li></li>').text(user));
+    var color = user === params.name ? 'Crimson' : 'SlateGray';
+    ol.append(jQuery('<li></li>').text(user).css({'color': color}));
   });
   jQuery('#users').html(ol);
 });
