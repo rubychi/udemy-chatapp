@@ -59,7 +59,8 @@ socket.on('newMessage', function (message) {
 socket.on('newLocationMessage', function (message) {
   var params = jQuery.deparam(window.location.search);
   var color = message.from === params.name ? 'Crimson' : 'SlateGray';
-  var formattedTime = moment(message.createdAt).format('h:mm a');
+  let dateObj = new Date(message.createdAt);
+  var formattedTime = moment(dateObj).format('h:mm a');
   var template = jQuery('#location-message-template').html();
   var html = Mustache.render(template, {
     color: color,
