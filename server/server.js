@@ -70,9 +70,9 @@ io.on('connection', (socket) => {
         let result = _.flatten(users.map(user => _.zipWith(_.fill(Array(user.createdAt.length), user.name), user.createdAt, user.message, (name, time, message) => {
           return _.defaults({ name, time, message });
         })));
+        const tz = params.tz || 'Asia/Taipei';
         result = _.filter(result, (item) => {
           const dateObj = new Date(item.time);
-          const tz = params.tz || 'Asia/Taipei';
           return moment(dateObj).tz(tz).isAfter(moment.tz(tz).startOf('day'));
         });
         result = _.sortBy(result, 'time');
