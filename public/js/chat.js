@@ -18,7 +18,7 @@ function scrollToBottom() {
 
 socket.on('connect', function () {
   var params = jQuery.deparam(window.location.search);
-  params.tz = moment.tz.guess() || 'Asia/Taipei';
+  params.tz = moment.tz.guess();
 
   socket.emit('join', params, function (error) {
     if (error) {

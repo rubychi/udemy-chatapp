@@ -72,8 +72,8 @@ io.on('connection', (socket) => {
         })));
         result = _.filter(result, (item) => {
           const dateObj = new Date(item.time);
-          console.log(params.tz);
-          // return moment(dateObj).tz(params.tz).isAfter(moment().tz(params.tz).startOf('day'));
+          const tz = params.tz || 'Asia/Taipei';
+          return moment(dateObj).tz(tz).isAfter(moment.tz(tz).startOf('day'));
         });
         result = _.sortBy(result, 'time');
         result.forEach((item) => {
