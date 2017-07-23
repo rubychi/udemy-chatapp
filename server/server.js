@@ -2,7 +2,7 @@ require('./config/config');
 const express = require('express');
 const socketIO = require('socket.io');
 const http = require('http');
-const moment = require('moment');
+const moment = require('moment-timezone');
 const _ = require('lodash');
 const { mongoose } = require('./db/mongoose');
 const { User } = require('./models/user');
@@ -72,7 +72,7 @@ io.on('connection', (socket) => {
         })));
         result = _.filter(result, (item) => {
           const dateObj = new Date(item.time);
-          return moment(dateObj).isAfter(moment().startOf('day'));
+          return moment(dateObj).tz(params.tz).isAfter(moment.tz(params.tz).startOf('day'));
         });
         result = _.sortBy(result, 'time');
         result.forEach((item) => {
