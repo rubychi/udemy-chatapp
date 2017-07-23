@@ -145,6 +145,23 @@ io.on('connection', (socket) => {
     if (user) {
       io.to(user.room).emit('updateUserList', users.getUserList(user.room));
       io.to(user.room).emit('newMessage', generateMessage('Admin', `${user.name} has left.`));
+      const time = moment(new Date().getTime()).toString();
+      User.findOneAndUpdate({ name: 'Admin' }, {
+        $push: {
+          message: `${user.name} has left.`,
+          createdAt: time,
+        },
+      }, (error, foundUser) => {
+        if (!foundUser) {
+          new User({
+            _id: mongoose.Types.ObjectId(),
+            name: 'Admin',
+            room: user.room,
+            message: `${user.name} has left.`,
+            createdAt: time,
+          }).save();
+        }
+      });
     }
   });
 });
