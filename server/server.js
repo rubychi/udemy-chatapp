@@ -72,6 +72,7 @@ io.on('connection', (socket) => {
         })));
         result = _.filter(result, (item) => {
           const dateObj = new Date(item.time);
+          console.log(moment(dateObj).tz(params.tz));
           return moment(dateObj).tz(params.tz).isAfter(moment.tz(params.tz).startOf('day'));
         });
         result = _.sortBy(result, 'time');
