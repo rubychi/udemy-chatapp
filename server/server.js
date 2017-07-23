@@ -87,8 +87,8 @@ io.on('connection', (socket) => {
             });
           }
         });
+        socket.emit('newMessage', generateMessage('Admin', `Welcome to the chat app! You are currently in room ${params.room}.`));
       });
-    socket.emit('newMessage', generateMessage('Admin', `Welcome to the chat app! You are currently in room ${params.room}.`));
     callback();
   });
   socket.on('createMessage', (message, callback) => {
