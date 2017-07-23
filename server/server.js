@@ -3,6 +3,7 @@ const express = require('express');
 const socketIO = require('socket.io');
 const http = require('http');
 const moment = require('moment');
+const _ = require('lodash');
 const { mongoose } = require('./db/mongoose');
 const { User } = require('./models/user');
 const { generateMessage, generateLocationMessage } = require('./utils/message');
@@ -46,6 +47,43 @@ io.on('connection', (socket) => {
     io.to(params.room).emit('updateUserList', users.getUserList(params.room));
     socket.emit('newMessage', generateMessage('Admin', `Welcome to the chat app! You are currently in room ${params.room}.`));
     socket.broadcast.to(params.room).emit('newMessage', generateMessage('Admin', `${params.name} has joined.`));
+    const time = moment(new Date().getTime()).toString();
+    User.findOneAndUpdate({ name: 'Admin' }, {
+      $push: {
+        message: `${params.name} has joined.`,
+        createdAt: time,
+      },
+    }, (error, foundUser) => {
+      if (!foundUser) {
+        new User({
+          _id: mongoose.Types.ObjectId(),
+          name: 'Admin',
+          room: params.room,
+          message: `${params.name} has joined.`,
+          createdAt: time,
+        }).save();
+      }
+    });
+    User
+      .find({ room: params.room })
+      .select('-_id -room -__v')
+      .exec((err, users) => {
+        let result = _.flatten(users.map(user => _.zipWith(_.fill(Array(user.createdAt.length), user.name), user.createdAt, user.message, (name, time, message) => {
+          return _.defaults({ name, time, message });
+        })));
+        result = _.filter(result, (item) => {
+          let dateObj = new Date(item.time);
+          return moment(dateObj).isAfter(moment().startOf('day'));
+        });
+        result = _.sortBy(result, 'time');
+        result.forEach(item =>
+          io.to(params.room).emit('newMessage', {
+            from: item.name,
+            text: item.message,
+            createdAt: item.time,
+          })
+        );
+      });
     callback();
   });
   socket.on('createMessage', (message, callback) => {
@@ -57,7 +95,7 @@ io.on('connection', (socket) => {
         text: message.text,
         createdAt: time,
       });
-      User.findByIdAndUpdate(user.id, {
+      User.findOneAndUpdate({ name: user.name }, {
         $push: {
           message: message.text,
           createdAt: time,
@@ -82,7 +120,7 @@ io.on('connection', (socket) => {
     if (user) {
       io.to(user.room).emit('newLocationMessage', generateLocationMessage(user.name, coords.latitude, coords.longitude));
       const time = moment(new Date().getTime()).toString();
-      User.findByIdAndUpdate(user.id, {
+      User.findOneAndUpdate({ name: user.name }, {
         $push: {
           message: `Send location: ${coords.latitude}, ${coords.longitude}`,
           createdAt: time,

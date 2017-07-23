@@ -42,7 +42,8 @@ socket.on('newMessage', function (message) {
     color = 'SlateGray';
     color2 = 'SlateGray';
   }
-  var formattedTime = moment(message.createdAt).format('h:mm a');
+  var dateObj = new Date(message.createdAt);
+  var formattedTime = moment(dateObj).format('h:mm a');
   var template = jQuery('#message-template').html();
   var html = Mustache.render(template, {
     color: color,
