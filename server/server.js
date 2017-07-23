@@ -79,7 +79,7 @@ io.on('connection', (socket) => {
         result.forEach((item) => {
           if (_.includes(item.message, 'Send location')) {
             const message = item.message.split(/[Send location:\s,]+/);
-            io.to(params.room).emit('newLocationMessage', generateLocationMessage(item.name, message[2], message[3], item.time));
+            io.to(params.room).emit('newLocationMessage', generateLocationMessage(item.name, message[1], message[2], item.time));
           } else {
             io.to(params.room).emit('newMessage', {
               from: item.name,
