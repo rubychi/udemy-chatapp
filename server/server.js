@@ -76,13 +76,18 @@ io.on('connection', (socket) => {
           return moment(dateObj).isAfter(moment().startOf('day'));
         });
         result = _.sortBy(result, 'time');
-        result.forEach(item =>
-          io.to(params.room).emit('newMessage', {
-            from: item.name,
-            text: item.message,
-            createdAt: item.time,
-          })
-        );
+        result.forEach((item) => {
+          if (_.includes(item.message, 'Send location')) {
+            const message = item.message.split(/[\s,]+/);
+            io.to(params.room).emit('newLocationMessage', generateLocationMessage(item.name, message[1], message[2]));
+          } else {
+            io.to(params.room).emit('newMessage', {
+              from: item.name,
+              text: item.message,
+              createdAt: item.time,
+            });
+          }
+        });
       });
     callback();
   });
