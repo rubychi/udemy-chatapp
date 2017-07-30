@@ -20,7 +20,7 @@ You can see a complete working example [here](https://udemy-chatapp.herokuapp.co
 
 * Save text messages in the cloud so that user won't miss any messages of the day
 
-* Add [nyc (the command-line-client for Istanbul)](https://istanbul.js.org/) for checking test coverage and generating test report
+* Add [nyc (the command-line-client for Istanbul)](https://istanbul.js.org/) for checking the test coverage and generating the test report
 
 ## Getting Started
 
@@ -76,7 +76,7 @@ If you just want to run the tests, type in the command below
 > npm run test-watch
 ```
 
-For checking test coverage and generating html report
+For checking the test coverage and generating the html report:
 ```
 > npm test
 ```
