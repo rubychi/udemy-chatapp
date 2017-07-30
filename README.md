@@ -1,6 +1,6 @@
 # ChatApp
 
-This is a hands-on project from [Udemy: The Complete Node.js Developer Course (2nd Edition)](https://www.udemy.com/the-complete-nodejs-developer-course-2/learn/v4)
+A hands-on project from [Udemy: The Complete Node.js Developer Course (2nd Edition)](https://www.udemy.com/the-complete-nodejs-developer-course-2/learn/v4)
 
 ## [Live Demo](https://udemy-chatapp.herokuapp.com/)
 
