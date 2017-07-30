@@ -4,7 +4,7 @@ This is a hands-on project from [Udemy: The Complete Node.js Developer Course (2
 
 ## [Live Demo](https://udemy-chatapp.herokuapp.com/)
 
-You can see a complete working example [here](https://udemy-chatapp.herokuapp.com/)
+You can see a complete working example [here](https://udemy-chatapp.herokuapp.com/), or view the test report [online](https://rubychi.github.io/udemy-chatapp/coverage/index.html)
 
 ## Features
 
