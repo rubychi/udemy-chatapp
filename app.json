@@ -8,5 +8,5 @@
     "Socket.IO"
   ],
   "repository": "https://github.com/rubychi/udemy-chatapp.git",
-  "addons": [mongolab:sandbox"]
+  "addons": ["mongolab:sandbox"]
 }
