@@ -102,6 +102,7 @@ For checking the test coverage and generating the html report:
 ```
 
 Alternately, click this button to deploy your own app<br>
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/rubychi/udemy-chatapp)
 
 ## Built With
