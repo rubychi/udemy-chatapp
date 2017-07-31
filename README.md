@@ -14,6 +14,8 @@ You can see a complete working example [here](https://udemy-chatapp.herokuapp.co
 
 * Automatically scroll down upon receiving a new message
 
+* Responsive web design (RWD)
+
 ### Custom Features
 
 * Colorized the user and the administrator's messages to set them apart from the rest
