@@ -1,4 +1,6 @@
 # ChatApp
+[![Known Vulnerabilities](https://snyk.io/test/github/rubychi/udemy-chatapp/badge.svg)](https://snyk.io/test/github/rubychi/udemy-chatapp)
+[![NSP Status](https://nodesecurity.io/orgs/rubychi/projects/fe07ed8d-aeb9-4418-b4cf-8602e5a24fdf/badge)](https://nodesecurity.io/orgs/rubychi/projects/fe07ed8d-aeb9-4418-b4cf-8602e5a24fdf)
 
 A hands-on project from [Udemy: The Complete Node.js Developer Course (2nd Edition)](https://www.udemy.com/the-complete-nodejs-developer-course-2/learn/v4)
 
