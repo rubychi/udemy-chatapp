@@ -1,0 +1,12 @@
+{
+  "name": "udemy-chatapp",
+  "description": "A hands-on project from Udemy: The Complete Node.js Developer Course (2nd Edition)",
+  "keywords": [
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "Socket.IO"
+  ],
+  "repository": "https://github.com/rubychi/udemy-chatapp.git",
+  "addons": ["mongolab:sandbox"]
+}
