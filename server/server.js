@@ -1,5 +1,6 @@
 require('./config/config');
 const express = require('express');
+const helmet = require('helmet');
 const socketIO = require('socket.io');
 const http = require('http');
 const moment = require('moment-timezone');
@@ -28,6 +29,8 @@ let users = new Users();
  * socket.emit
  */
 
+app.use(helmet());
+app.use(helmet.noCache());
 // app.use(bodyParser.json());
 app.use(express.static(publicPath));
 
