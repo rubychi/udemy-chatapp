@@ -60,7 +60,7 @@ socket.on('newMessage', function (message) {
 socket.on('newLocationMessage', function (message) {
   var params = jQuery.deparam(window.location.search);
   var color = message.from === params.name ? 'Crimson' : 'SlateGray';
-  let dateObj = new Date(message.createdAt);
+  var dateObj = new Date(message.createdAt);
   var formattedTime = moment(dateObj).format('h:mm a');
   var template = jQuery('#location-message-template').html();
   var html = Mustache.render(template, {
@@ -75,7 +75,7 @@ socket.on('newLocationMessage', function (message) {
 
 socket.on('updateUserList', function (users) {
   var params = jQuery.deparam(window.location.search);
-  let ol = jQuery('<ul></ul>');
+  var ol = jQuery('<ul></ul>');
 
   users.forEach(function (user) {
     var color = user === params.name ? 'Crimson' : 'SlateGray';
@@ -99,7 +99,7 @@ jQuery('#message-form').on('submit', function (e) {
   });
 });
 
-let locationButton = jQuery('#send-location');
+var locationButton = jQuery('#send-location');
 locationButton.on('click', function () {
   if (!navigator.geolocation) {
     return alert('Geolocation not supported by your browser');
