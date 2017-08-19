@@ -47,7 +47,7 @@ Follow the instructions below to set up the environment and run this project on 
 > mongod
 ```
 
-3. Install dependencies via NPM in both client and server directories
+3. Install dependencies via NPM
 ```
 > npm install
 ```
@@ -66,7 +66,7 @@ Follow the instructions below to set up the environment and run this project on 
 }
 ```
 
-5. Start the server and the service
+5. Back to the root directory and type the below command to start the server and the service
 ```
 > npm run dev-watch
 ```
