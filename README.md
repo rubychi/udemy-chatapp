@@ -119,6 +119,7 @@ For checking the test coverage and generating the html report:
 ### Backend
 
 * express
+* mongodb
 * mongoose
 
 ### Utils
