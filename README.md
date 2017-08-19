@@ -115,7 +115,6 @@ For checking the test coverage and generating the html report:
 
 * jquery
 * mustache
-* deparam
 
 ### Backend
 
@@ -129,7 +128,6 @@ For checking the test coverage and generating the html report:
 * moment
 
 ### Testing Frameworks
-* expect
 * mocha
 * nyc
 
