@@ -121,6 +121,7 @@ For checking the test coverage and generating the html report:
 * express
 * mongodb
 * mongoose
+* helmet
 
 ### Utils
 
