@@ -1,5 +1,5 @@
 # ChatApp
-[![Travis-CI Status]https://travis-ci.org/rubychi/udemy-chatapp.svg?branch=master
+[![Travis-CI Status](https://travis-ci.org/rubychi/udemy-chatapp.svg?branch=master)](https://travis-ci.org/rubychi/udemy-chatapp.svg?branch=master)
 [![Known Vulnerabilities](https://snyk.io/test/github/rubychi/udemy-chatapp/badge.svg)](https://snyk.io/test/github/rubychi/udemy-chatapp)
 [![NSP Status](https://nodesecurity.io/orgs/rubychi/projects/fe07ed8d-aeb9-4418-b4cf-8602e5a24fdf/badge)](https://nodesecurity.io/orgs/rubychi/projects/fe07ed8d-aeb9-4418-b4cf-8602e5a24fdf)
 
