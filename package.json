@@ -7,7 +7,7 @@
     "start": "node server/server.js",
     "dev": "export NODE_ENV=development || SET \"NODE_ENV=development\" && node server/server.js",
     "dev-watch": "export NODE_ENV=development || SET \"NODE_ENV=development\" && nodemon server/server.js",
-    "test": "snyk test && nyc --reporter=html mocha server/**/*.test.js",
+    "test": "nyc --reporter=html mocha server/**/*.test.js",
     "test-watch": "export NODE_ENV=test || SET \"NODE_ENV=test\" && nodemon --exec \"npm test\""
   },
   "engines": {
