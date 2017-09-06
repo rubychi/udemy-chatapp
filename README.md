@@ -124,6 +124,7 @@ Click this button to deploy to your Heroku server<br>
 * express
 * mongodb
 * mongoose
+* compression
 * helmet
 
 ### Utils
