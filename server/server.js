@@ -1,5 +1,6 @@
 require('./config/config');
 const express = require('express');
+const compression = require('compression');
 const helmet = require('helmet');
 const socketIO = require('socket.io');
 const http = require('http');
@@ -29,8 +30,8 @@ let users = new Users();
  * socket.emit
  */
 
+app.use(compression());
 app.use(helmet());
-app.use(helmet.noCache());
 // app.use(bodyParser.json());
 app.use(express.static(publicPath));
 
