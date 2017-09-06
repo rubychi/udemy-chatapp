@@ -1,4 +1,5 @@
 # ChatApp
+[![Build Status](https://travis-ci.org/rubychi/udemy-chatapp.svg?branch=master)](https://travis-ci.org/rubychi/udemy-chatapp)
 [![Known Vulnerabilities](https://snyk.io/test/github/rubychi/udemy-chatapp/badge.svg)](https://snyk.io/test/github/rubychi/udemy-chatapp)
 [![NSP Status](https://nodesecurity.io/orgs/rubychi/projects/fe07ed8d-aeb9-4418-b4cf-8602e5a24fdf/badge)](https://nodesecurity.io/orgs/rubychi/projects/fe07ed8d-aeb9-4418-b4cf-8602e5a24fdf)
 
@@ -6,7 +7,7 @@ A hands-on project from [Udemy: The Complete Node.js Developer Course (2nd Editi
 
 ## [Live Demo](https://udemy-chatapp.herokuapp.com/)
 
-You can see a complete working example [here](https://udemy-chatapp.herokuapp.com/), or view the test report [online](https://rubychi.github.io/udemy-chatapp/coverage/index.html)
+You can see a complete working example [here](https://udemy-chatapp.herokuapp.com/), or view the test [report](https://rubychi.github.io/udemy-chatapp/coverage/index.html)
 
 ## Features
 
@@ -105,7 +106,9 @@ For checking the test coverage and generating the html report:
 > heroku open
 ```
 
-### Alternatively, click this button to quickly deploy to your own Heroku server<br>
+### Alternatively
+
+Click this button to deploy to your Heroku server<br>
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/rubychi/udemy-chatapp)
 
