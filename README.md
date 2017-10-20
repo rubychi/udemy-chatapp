@@ -8,7 +8,7 @@ A hands-on project from [Udemy: The Complete Node.js Developer Course (2nd Editi
 
 ## [Live Demo](https://udemy-chatapp.herokuapp.com/)
 
-You can see a complete working example [here](https://udemy-chatapp.herokuapp.com/), or view the test [report](https://rubychi.github.io/udemy-chatapp/coverage/index.html)
+You can see a complete working example [here](https://udemy-chatapp.herokuapp.com/)
 
 ## Features
 
@@ -84,7 +84,7 @@ If you just want to run the tests, type in the command below
 
 For checking the test coverage and generating the html report:
 ```
-> npm test
+> npm run test-report
 ```
 
 ## Deployment
