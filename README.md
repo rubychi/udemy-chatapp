@@ -84,7 +84,7 @@ If you just want to run the tests, type in the command below
 
 For checking the test coverage and generating the html report:
 ```
-> npm test
+> npm run test-report
 ```
 
 ## Deployment
