@@ -7,10 +7,10 @@
     "start": "node server/server.js",
     "dev": "export NODE_ENV=development || SET \"NODE_ENV=development\" && node server/server.js",
     "dev-watch": "export NODE_ENV=development || SET \"NODE_ENV=development\" && nodemon server/server.js",
-    "test": "nyc mocha server/**/*.test.js",
-    "test-report": "nyc --reporter=html mocha server/**/*.test.js",
+    "test": "nyc --reporter=html mocha server/**/*.test.js",
     "test-watch": "export NODE_ENV=test || SET \"NODE_ENV=test\" && nodemon --exec \"npm test\"",
-    "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": "6.2.2"
@@ -24,6 +24,7 @@
     "lodash": "^4.17.5",
     "moment": "^2.19.3",
     "moment-timezone": "^0.5.13",
+    "snyk": "^1.41.1"
     "mongoose": "^4.13.17",
     "socket.io": "^2.0.3"
   },
@@ -33,5 +34,6 @@
     "mocha": "^3.4.2",
     "nyc": "^11.2.1"
   },
-  "repository": "https://github.com/RubyChi/Udemy-ChatApp.git"
+  "repository": "https://github.com/RubyChi/Udemy-ChatApp.git",
+  "snyk": true
 }
