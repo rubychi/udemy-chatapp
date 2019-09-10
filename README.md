@@ -7,8 +7,6 @@ A hands-on project from [Udemy: The Complete Node.js Developer Course (2nd Editi
 
 ## [Live Demo](https://udemy-chatapp.herokuapp.com/)
 
-You can see a complete working example [here](https://udemy-chatapp.herokuapp.com/)
-
 ## Features
 
 * Join a specified room to chat
