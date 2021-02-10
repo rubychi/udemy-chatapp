@@ -13,7 +13,7 @@
     "prepare": "npm run snyk-protect"
   },
   "engines": {
-    "node": "6.2.2"
+    "node": "14.x"
   },
   "author": "RubyChi <nothelse@hotmail.com>",
   "license": "ISC",
@@ -21,11 +21,11 @@
     "compression": "^1.7.1",
     "express": "^4.16.0",
     "helmet": "^3.8.2",
-    "lodash": "^4.17.12",
+    "lodash": "^4.17.20",
     "moment": "^2.19.3",
     "moment-timezone": "^0.5.13",
-    "snyk": "^1.41.1",
     "mongoose": "^4.13.17",
+    "snyk": "^1.41.1",
     "socket.io": "^2.0.3"
   },
   "devDependencies": {
