@@ -25,7 +25,7 @@
     "moment": "^2.19.3",
     "moment-timezone": "^0.5.13",
     "mongoose": "^5.11.15",
-    "snyk": "^1.41.1",
+    "snyk": "^1.465.0",
     "socket.io": "^2.0.3"
   },
   "devDependencies": {
