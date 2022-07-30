@@ -24,7 +24,7 @@
     "lodash": "^4.17.20",
     "moment": "^2.19.3",
     "moment-timezone": "^0.5.13",
-    "mongoose": "^5.11.15",
+    "mongoose": "^6.4.6",
     "snyk": "^1.41.1",
     "socket.io": "^2.0.3"
   },
