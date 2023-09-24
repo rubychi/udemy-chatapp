@@ -7,6 +7,8 @@ A hands-on project from [Udemy: The Complete Node.js Developer Course (2nd Editi
 
 ## [Live Demo](https://udemy-chatapp.herokuapp.com/)
 
+<img width="1439" alt="udemy-chatapp" src="https://github.com/rubychi/udemy-chatapp/assets/18576075/bc9f31de-f970-4a01-b46c-c56184eca10e">
+
 ## Features
 
 * Join a specified room to chat
