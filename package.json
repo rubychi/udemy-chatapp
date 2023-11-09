@@ -22,7 +22,7 @@
     "express": "^4.16.0",
     "helmet": "^3.8.2",
     "lodash": "^4.17.20",
-    "moment": "^2.19.3",
+    "moment": "^2.29.4",
     "moment-timezone": "^0.5.13",
     "mongoose": "^5.11.15",
     "snyk": "^1.41.1",
