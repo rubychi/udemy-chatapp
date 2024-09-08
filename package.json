@@ -23,10 +23,10 @@
     "helmet": "^3.8.2",
     "lodash": "^4.17.20",
     "moment": "^2.19.3",
-    "moment-timezone": "^0.5.13",
-    "mongoose": "^5.11.15",
+    "moment-timezone": "^0.5.18",
+    "mongoose": "^5.12.4",
     "snyk": "^1.41.1",
-    "socket.io": "^2.0.3"
+    "socket.io": "^2.1.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
