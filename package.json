@@ -18,7 +18,7 @@
   "author": "RubyChi <nothelse@hotmail.com>",
   "license": "ISC",
   "dependencies": {
-    "compression": "^1.7.1",
+    "compression": "^1.8.1",
     "express": "^4.16.0",
     "helmet": "^3.8.2",
     "lodash": "^4.17.20",
@@ -26,7 +26,7 @@
     "moment-timezone": "^0.5.13",
     "mongoose": "^5.11.15",
     "snyk": "^1.41.1",
-    "socket.io": "^2.0.3"
+    "socket.io": "^4.8.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
